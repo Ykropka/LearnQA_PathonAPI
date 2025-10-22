@@ -6,7 +6,7 @@ class Assertions:
     def assert_message_text(response: Response, text, error_message):
         try:
             response_as_dict = response.text
-        except json.JSONDecodeError:
+        except:
             assert False, f"Response text error. Response text is '{response.text}'"
         assert response_as_dict == text, error_message
 
